@@ -1,0 +1,191 @@
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+* bug1
+  bug2
+  bug3
+  master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git add .
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git commit -m "Fix wrong loop for reading"
+[bug1 3f111a2] Fix wrong loop for reading
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+* bug1
+  bug2
+  bug3
+  master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git checkout bug2
+Switched to branch 'bug2'
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+* bug2
+  bug3
+  master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git add .
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git commit -m "Fix wrong condition in filterOddNumbers"
+[bug2 512c5af] Fix wrong condition in filterOddNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+* bug2
+  bug3
+  master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git checkout bug3
+Switched to branch 'bug3'
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git add .
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git commit -m "Fix method sumEvenNumbers"
+[bug3 f9614ec] Fix method sumEvenNumbers
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git checkout master
+Switched to branch 'master'
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+  bug2
+  bug3
+* master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git push --all origin
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 819 bytes | 819.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/Angelov11/SI_2023_lab1_145063.git
+ * [new branch]      bug1 -> bug1
+ * [new branch]      bug2 -> bug2
+ * [new branch]      bug3 -> bug3
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+  bug2
+  bug3
+* master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git merge bug1
+Updating 507c463..3f111a2
+Fast-forward
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git push -all origin
+error: did you mean `--all` (with two dashes)?
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git push --all origin
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Angelov11/SI_2023_lab1_145063.git
+   507c463..3f111a2  master -> master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+  bug2
+  bug3
+* master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git merge bug2
+Auto-merging SILab1.java
+Merge made by the 'recursive' strategy.
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git status
+On branch master
+nothing to commit, working tree clean
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git push --all origin
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Angelov11/SI_2023_lab1_145063.git
+   3f111a2..3385065  master -> master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git checkout bug3
+Switched to branch 'bug3'
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git branch
+  bug1
+  bug2
+* bug3
+  master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git rebase master
+Successfully rebased and updated refs/heads/bug3.
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git checkout master
+Switched to branch 'master'
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git merge bug3
+Updating 3385065..2360686
+Fast-forward
+ SILab1.java | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git push --all --force origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 339 bytes | 339.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Angelov11/SI_2023_lab1_145063.git
+ + f9614ec...2360686 bug3 -> bug3 (forced update)
+   3385065..2360686  master -> master
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+Ivans-MacBook-Pro-2:SI_2023_lab1_145063 ivan$ git log
+commit 2360686a8151c1effd4408024acba69220402c13 (HEAD -> master, origin/master, origin/bug3, bug3)
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:42:35 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 338506563d1fedf8416ad9cb3cfedd660f7b0bca
+Merge: 3f111a2 512c5af
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:46:43 2023 +0200
+
+    Merge branch 'bug2'
+
+commit 512c5afac586dcc27864039af87b5eb173aede71 (origin/bug2, bug2)
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:41:37 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit 3f111a2f75fdcf86430013468477559d57b19152 (origin/bug1, bug1)
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:40:24 2023 +0200
+
+    Fix wrong loop for reading
+
+commit 507c463d9fc748795bf21cdd7cfd739c6ea8f88d
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:36:27 2023 +0200
+
+    Add java class
+
+commit b443f1d102e5f74dcc71f03923016d7266be522f
+Author: angelov11 <angelov.455@gmail.com>
+Date:   Fri Apr 7 11:35:17 2023 +0200
